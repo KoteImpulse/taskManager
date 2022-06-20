@@ -14,6 +14,7 @@ import { selectTaskModal, taskModalSlice, TaskModalType, TaskModalTypeWhere } fr
 import { selectProject } from '../../../../store/slices/ProjectSlice';
 import TaskForm from '../../../Forms/TaskForm/TaskForm';
 import { selectSections } from '../../../../store/slices/SectionsSlice';
+import { selectTasks } from '../../../../store/slices/TasksSlice';
 
 interface SingleTaskContentSubtasksProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}
 
@@ -24,13 +25,14 @@ const SingleTaskContentSubtasks: FC<SingleTaskContentSubtasksProps> = ({ classNa
 	const { project } = useAppSelector(selectProject);
 	const { sections } = useAppSelector(selectSections);
 	const { tasksProject } = useAppSelector(selectTasksProject);
+	const { tasks } = useAppSelector(selectTasks);
 	const { taskModal } = useAppSelector(selectTaskModal);
 	const { task } = useAppSelector(selectTask);
 	const { listRef, refListItem } = useListItemsContext(ModalType.taskModal, ContentType.standart);
 
 	const newTasks = useMemo(() => {
 		return hide
-			? tasksProject
+			? tasks
 					.filter((item) => !item.isArchived && item.parentId === task.id)
 					.sort((a, b) => {
 						if (a.level < b.level) return -1;
@@ -41,7 +43,7 @@ const SingleTaskContentSubtasks: FC<SingleTaskContentSubtasksProps> = ({ classNa
 						if (a.order > b.order) return 1;
 						return 0;
 					})
-			: tasksProject
+			: tasks
 					.filter((item) => item.parentId === task.id)
 					.sort((a, b) => {
 						if (a.level < b.level) return -1;
@@ -52,17 +54,17 @@ const SingleTaskContentSubtasks: FC<SingleTaskContentSubtasksProps> = ({ classNa
 						if (a.order > b.order) return 1;
 						return 0;
 					});
-	}, [hide, task.id, tasksProject]);
+	}, [hide, task.id, tasks]);
 	const tasksArr = useMemo(() => {
-		const arr = tasksProject.filter((item) => item.parentId === task.id);
+		const arr = tasks.filter((item) => item.parentId === task.id);
 		return arr.every((item) => !item.isArchived);
-	}, [task.id, tasksProject]);
+	}, [task.id, tasks]);
 	const subtasksArr = useMemo(() => {
-		return tasksProject.filter((item) => item.parentId === task.id);
-	}, [task.id, tasksProject]);
+		return tasks.filter((item) => item.parentId === task.id);
+	}, [task.id, tasks]);
 	const complitedSubtasksArr = useMemo(() => {
-		return tasksProject.filter((item) => item.isArchived && item.parentId === task.id);
-	}, [task.id, tasksProject]);
+		return tasks.filter((item) => item.isArchived && item.parentId === task.id);
+	}, [task.id, tasks]);
 	const showTaskModal = useMemo(() => {
 		return (
 			taskModal.typeWhere === TaskModalTypeWhere.subTask &&
@@ -74,7 +76,7 @@ const SingleTaskContentSubtasks: FC<SingleTaskContentSubtasksProps> = ({ classNa
 	const openTaskModalAddSubtask = useCallback(() => {
 		let lastChildId = task.id;
 		if (task.parent && !task.isCollapsed) {
-			const children = tasksProject
+			const children = tasks
 				.filter((item) => item.parentId === task.id && !item.isArchived)
 				.sort((a, b) => a.order - b.order);
 			if (children.length > 0) {
@@ -118,7 +120,7 @@ const SingleTaskContentSubtasks: FC<SingleTaskContentSubtasksProps> = ({ classNa
 		task.projectId,
 		task.projectName,
 		task.sectionId,
-		tasksProject,
+		tasks,
 	]);
 
 	return (
@@ -159,7 +161,7 @@ const SingleTaskContentSubtasks: FC<SingleTaskContentSubtasksProps> = ({ classNa
 									}}
 								/>
 							))}
-						{task.level < 4 && !task.isArchived &&(
+						{task.level < 4 && !task.isArchived && (
 							<li className={styles.addTask}>
 								{!showTaskModal ? (
 									<SectionsAddTaskButton
