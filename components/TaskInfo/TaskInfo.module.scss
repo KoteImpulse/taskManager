@@ -1,0 +1,50 @@
+.taskInfo {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	.subTasksInfo {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		min-height: 16px;
+		.text {
+			display: flex;
+			align-items: center;
+			flex-wrap: nowrap;
+			white-space: nowrap;
+			height: 16px;
+			line-height: 16px;
+			font-size: 12px;
+			color: gray;
+		}
+	}
+	.endDateInfo {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		.text {
+			display: flex;
+			align-items: center;
+			flex-wrap: nowrap;
+			white-space: nowrap;
+			height: 16px;
+			line-height: 16px;
+			font-size: 12px;
+		}
+	}
+	.label {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		.text {
+			display: flex;
+			align-items: center;
+			flex-wrap: nowrap;
+			white-space: nowrap;
+			height: 16px;
+			line-height: 16px;
+			font-size: 12px;
+			color: gray;
+		}
+	}
+}

@@ -1,0 +1,20 @@
+.projectListBox {
+	.content {
+		padding-left: var(--project-padding);
+		padding-right: var(--project-padding);
+		max-width: var(--project-max-width);
+		margin: 0 auto;
+		position: relative;
+		z-index: 1;
+		.weekPicker{
+			margin-bottom: 20px;
+		}
+		.listItems {
+			.listItem {
+				position: relative;
+				padding-bottom: 18px;
+				margin-bottom: 18px;
+			}
+		}
+	}
+}

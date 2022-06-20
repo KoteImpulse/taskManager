@@ -1,0 +1,16 @@
+.projectSelectInput {
+	display: flex;
+	flex-direction: column;
+	padding: 4px 10px;
+	align-items: flex-start;
+	border-bottom: 1px solid var(--select-project-border);
+	border-color: hsla(0, 0%, 100%, 0.1);
+	.input {
+		border: 0;
+		line-height: 24px;
+		flex-grow: 1;
+		outline: none;
+		color: var(--text-main-color);
+		background-color: transparent;
+	}
+}

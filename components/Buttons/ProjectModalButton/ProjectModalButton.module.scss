@@ -1,0 +1,24 @@
+@import 'mixins';
+.projectModalButton {
+	@include button();
+	width: unset;
+	text-align: center;
+	font-weight: 700;
+	padding: 8px 14px;
+	border-radius: 3px;
+	background: var(--bg-project-modal-button);
+	color: var(--text-main-color);
+	border: 1px solid transparent;
+	&:hover {
+		border: 1px solid #444444;
+	}
+	&.submit {
+		background-color: #db4c3f;
+		color: var(--light-color);
+		text-shadow: none;
+		border: none;
+	}
+	&.disable {
+		opacity: 0.3;
+	}
+}

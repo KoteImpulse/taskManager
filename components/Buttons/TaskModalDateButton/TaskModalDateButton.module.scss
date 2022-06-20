@@ -1,0 +1,30 @@
+@import 'mixins';
+.taskModalDateButton {
+	@include button();
+	justify-content: space-between;
+	height: 28px;
+	padding: 0 8px;
+	border: 1px solid var(--task-modal-btn-border);
+	border-radius: 5px;
+	color: var(--task-modal-btn-color);
+	background-color: transparent;
+	gap: 10px;
+	flex-shrink: 0;
+	width: unset;
+
+	&.active {
+		background-color: var(--task-modal-bg);
+	}
+	&:hover {
+		background-color: var(--task-modal-bg);
+	}
+	.icon {
+		display: flex;
+		align-items: center;
+		font-size: 16px;
+	}
+	.text {
+		display: flex;
+		align-items: center;
+	}
+}

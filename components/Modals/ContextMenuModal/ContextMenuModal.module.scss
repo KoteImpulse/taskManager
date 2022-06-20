@@ -1,0 +1,35 @@
+.contextMenuModal {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	user-select: none;
+	.wrapper {
+		.content {
+			position: absolute;
+			inset: 0 auto auto 0;
+			.listItems {
+				display: block;
+				position: relative;
+				background-color: var(--bg-sidebar-modal);
+				border-collapse: separate;
+				border-radius: 3px;
+				border: 1px solid var(--sidebar-modal-border);
+				box-shadow: 0 1px 8px 0 var(--sidebar-modal-shadow);
+				margin: 0;
+				padding: 4px 0;
+				width: 250px;
+
+				.listItem {
+					display: flex;
+					align-items: flex-start;
+					line-height: 24px;
+					padding: 4px 10px;
+					color: var(--text-main-color);
+				}
+			}
+		}
+	}
+}

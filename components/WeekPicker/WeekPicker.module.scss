@@ -1,0 +1,63 @@
+@import 'mixins';
+.weekPicker {
+	display: flex;
+	flex-direction: column;
+	.header {
+		display: flex;
+		flex: 1;
+		margin-bottom: 12px;
+		align-items: center;
+		margin-left: 24px;
+		.date {
+			display: flex;
+			flex: 1;
+			font-size: 20px;
+			font-weight: 600;
+			color: var(--text-main-color);
+		}
+		.controls {
+			display: flex;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			line-height: 26px;
+			height: 26px;
+		}
+	}
+	.calendar {
+		border-bottom: 1px solid var(--task-border);
+		.week {
+			display: flex;
+			line-height: 24px;
+			font-size: 13px;
+			.day {
+				@include button();
+				flex-direction: column;
+				line-height: 24px;
+				width: calc(100% / 7);
+				color: gray;
+				cursor: unset;
+				.dayOfWeek {
+					display: flex;
+					color: gray;
+					font-size: 12px;
+				}
+				.dayOfMonth {
+					display: flex;
+					color: var(--text-main-color);
+					font-size: 16px;
+				}
+				&:hover {
+					background-color: var(--calendar-day-hover);
+				}
+				&.today {
+					.dayOfWeek {
+						color: #dd4b39;
+					}
+					.dayOfMonth {
+						color: #dd4b39;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,79 @@
+@import 'mixins';
+.taskCheckboxButton {
+	@include button();
+	flex-shrink: 0;
+	width: 24px;
+	height: 24px;
+	padding: 0;
+
+	&.disable {
+		opacity: 0.3;
+	}
+	.circle {
+		display: flex;
+		height: 20px;
+		width: 20px;
+		border: 2px solid transparent;
+		border-radius: 50%;
+		overflow: hidden;
+		justify-content: center;
+
+		.icon {
+			display: flex;
+			font-size: 14px;
+			align-items: center;
+			justify-content: center;
+			height: 16px;
+			width: 16px;
+			pointer-events: none;
+			opacity: 0;
+		}
+		&:hover {
+			.icon {
+				opacity: 1;
+			}
+		}
+		&[data-priority='1'] {
+			background-color: var(--bg-checkbox-priority1);
+			border-color: var(--border-checkbox-priority1);
+			color: var(--color-checkbox-priority1);
+			border-width: 1px;
+		}
+		&[data-priority='2'] {
+			background-color: var(--bg-checkbox-priority2);
+			border-color: var(--border-checkbox-priority2);
+			color: var(--color-checkbox-priority2);
+		}
+		&[data-priority='3'] {
+			background-color: var(--bg-checkbox-priority3);
+			border-color: var(--border-checkbox-priority3);
+			color: var(--color-checkbox-priority3);
+		}
+		&[data-priority='4'] {
+			background-color: var(--bg-checkbox-priority4);
+			border-color: var(--border-checkbox-priority4);
+			color: var(--color-checkbox-priority4);
+		}
+	}
+
+	&.archived {
+		.circle {
+			&[data-priority='1'] {
+				background-color: var(--border-checkbox-priority1);
+			}
+			&[data-priority='2'] {
+				background-color: var(--border-checkbox-priority2);
+			}
+			&[data-priority='3'] {
+				background-color: var(--border-checkbox-priority3);
+			}
+			&[data-priority='4'] {
+				background-color: var(--border-checkbox-priority4);
+			}
+			.icon {
+				opacity: 1;
+				color: #fff;
+			}
+		}
+	}
+}

@@ -1,0 +1,23 @@
+@import 'mixins';
+.collapseSingleTaskButton {
+	@include button();
+	justify-content: flex-start;
+	flex: 1;
+	font-weight: 700;
+	color: inherit;
+	padding: 10px 0;
+	.container {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+		.text {
+		}
+		.icon {
+			display: flex;
+			align-items: center;
+		}
+	}
+	&.disable {
+		// opacity: 0.3;
+	}
+}

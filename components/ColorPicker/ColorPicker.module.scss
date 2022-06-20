@@ -1,0 +1,51 @@
+.colorPicker {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 20px;
+	flex-flow: row wrap;
+	color: var(--text-main-color);
+	user-select: none;
+
+	.label {
+		display: block;
+		font-size: 14px;
+		width: 50%;
+		font-weight: 700;
+		margin: 0 0 7px;
+		color: inherit;
+	}
+	.dropdown {
+		position: relative;
+		width: 100%;
+		z-index: 1;
+		&.show {
+			opacity: 1;
+			height: auto;
+			visibility: visible;
+		}
+		&.hide {
+			opacity: 0;
+			height: 0;
+			visibility: hidden;
+		}
+		.dropdownListItems {
+			display: flex;
+			position: absolute;
+			flex-direction: column;
+			justify-content: center;
+			top: 0;
+			left: 0;
+			width: 100%;
+			font-size: 14px;
+			border-radius: 5px;
+			border: 1px solid var(--bg-project-modal-border);
+			padding: 5px;
+			color: var(--text-main-color);
+			background-color: var(--bg-project-modal-header);
+			user-select: none;
+
+			.dropdownListItem {
+			}
+		}
+	}
+}

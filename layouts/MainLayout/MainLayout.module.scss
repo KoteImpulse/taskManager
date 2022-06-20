@@ -1,0 +1,73 @@
+@import 'mixins';
+.background {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	font-size: 14px;
+	overflow: hidden;
+	color: var(--text-main-color);
+	background-color: var(--bg-main);
+	user-select: none;
+	.topbar {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		height: var(--header-height);
+		border-bottom: 1px solid transparent;
+		padding-left: 42px;
+		padding-right: 42px;
+		background-color: var(--bg-topbar);
+		box-shadow: var(--header-shadow);
+		z-index: 200;
+	}
+	.mainBar {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		overflow: hidden auto;
+		.container {
+			display: flex;
+			flex-direction: column;
+			flex-grow: 1;
+			overflow: hidden;
+			.sidebar {
+				position: fixed;
+				height: calc(100vh - var(--header-height));
+				padding-top: 30px;
+				padding-left: 35px;
+				overflow: hidden;
+				background-color: var(--bg-sidebar);
+			}
+			.resizer {
+				width: 5px;
+				margin-left: -2px;
+				height: calc(100vh - var(--header-height));
+				padding-top: 30px;
+				position: fixed;
+				overflow: hidden;
+				z-index: 999;
+				cursor: col-resize;
+				opacity: 1;
+				visibility: visible;
+				&:hover {
+					background-color: var(--bg-resizer);
+				}
+				&.hidden {
+					opacity: 0;
+					visibility: hidden;
+				}
+			}
+			.mainContent {
+				display: flex;
+				position: relative;
+				flex-direction: column;
+				flex-grow: 1;
+				min-height: var(--main-height);
+				overflow: hidden auto;
+				background-color: var(--bg-main);
+				@include scrollBar();
+			}
+		}
+	}
+}

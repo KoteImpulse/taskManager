@@ -1,0 +1,27 @@
+.singleTaskContentSubtasks {
+	margin-top: 20px;
+	.buttons {
+		display: flex;
+		align-items: center;
+		.buttonCollapse {
+			display: flex;
+			flex: 1;
+		}
+		.buttonHide {
+			display: flex;
+			flex-shrink: 0;
+		}
+	}
+	.tasks {
+		display: flex;
+		.listItems {
+			display: flex;
+			flex-direction: column;
+			margin-left: 20px;
+			flex: 1;
+			.listItem {
+				display: flex;
+			}
+		}
+	}
+}

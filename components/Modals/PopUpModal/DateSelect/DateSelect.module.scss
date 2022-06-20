@@ -1,0 +1,14 @@
+@import 'mixins';
+.dateSelect {
+	@include ulListSelect();
+	.listItems {
+		display: flex;
+		flex-direction: column;
+		row-gap: 5px;
+		padding-top: 10px;
+	}
+	.buttons {
+		display: flex;
+		flex-direction: column;
+	}
+}

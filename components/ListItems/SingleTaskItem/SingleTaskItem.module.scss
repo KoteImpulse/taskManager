@@ -1,0 +1,67 @@
+@import 'mixins';
+.singleTaskItem {
+	display: flex;
+	position: relative;
+	background-color: transparent;
+	user-select: none;
+	gap: 10px;
+	.editTaskForm {
+		@include addEditTaskForm();
+		background-color: transparent;
+		margin: 0;
+		margin-left: 34px;
+		padding: 0;
+	}
+	&.archivedTask {
+	}
+	.buttons {
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+		margin-top: 8px;
+	}
+	.content {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		.wrapper {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 3px;
+			padding: 6px;
+			.nameText {
+				display: flex;
+				flex-grow: 1;
+				font-size: 20px;
+				// margin-bottom: 20px;
+				line-height: 1.5;
+				word-wrap: break-word;
+				word-break: break-word;
+				color: var(--text-main-color);
+				overflow: hidden;
+				font-weight: 700;
+				cursor: text;
+				&.archived {
+					text-decoration: line-through;
+					cursor: unset;
+					pointer-events: none;
+				}
+			}
+
+			.descriptionText {
+				display: flex;
+				font-size: 14px;
+				line-height: 1.5;
+				word-wrap: break-word;
+				word-break: break-word;
+				overflow: hidden;
+				color: var(--text-main-color);
+				cursor: text;
+				&.archived {
+					cursor: unset;
+					pointer-events: none;
+				}
+			}
+		}
+	}
+}

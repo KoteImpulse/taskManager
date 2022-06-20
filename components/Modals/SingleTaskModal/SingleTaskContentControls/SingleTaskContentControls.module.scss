@@ -1,0 +1,60 @@
+.singleTaskContentControls {
+	width: 250px;
+	padding: 12px;
+	overflow: auto;
+
+	.controls {
+		display: flex;
+		flex-direction: column;
+		row-gap: 20px;
+		.item {
+			display: flex;
+			flex-direction: column;
+			row-gap: 10px;
+			.text {
+				display: flex;
+			}
+		}
+		.priority {
+			display: flex;
+			flex-direction: column;
+			row-gap: 10px;
+			.buttons {
+				display: flex;
+				flex-direction: row;
+				gap: 10px;
+				.priorityButton {
+					display: inline-block;
+					border: 1px solid transparent;
+					border-radius: 3px;
+					width: 30px;
+					height: 30px;
+					cursor: pointer;
+					&:hover {
+						color: unset;
+						background-color: var(--select-project-bg-active);
+					}
+					&[data-priority='1'] {
+						color: var(--color-checkbox-priority1);
+					}
+					&[data-priority='2'] {
+						color: var(--color-checkbox-priority2);
+					}
+					&[data-priority='3'] {
+						color: var(--color-checkbox-priority3);
+					}
+					&[data-priority='4'] {
+						color: var(--color-checkbox-priority4);
+					}
+					&.active {
+						border: 1px solid var(--select-priority-border);
+					}
+				}
+			}
+			&:hover {
+				color: unset;
+				background-color: unset;
+			}
+		}
+	}
+}

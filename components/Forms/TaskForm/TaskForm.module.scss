@@ -1,0 +1,76 @@
+.taskForm {
+	display: flex;
+	flex-direction: column;
+	&.modal {
+		.buttons {
+			border-top: 1px solid var(--bg-project-modal-border);
+		}
+	}
+	&.project {
+		.content {
+			padding: 5px;
+		}
+		.buttons {
+			padding: 5px;
+		}
+	}
+	.content {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		width: 100%;
+		border-radius: 10px;
+		padding: 16px 20px;
+		background-color: inherit;
+		box-shadow: unset;
+		cursor: text;
+		.textInputs {
+			display: flex;
+			flex-direction: column;
+		}
+		.buttonsBlock {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: space-between;
+			align-items: center;
+			row-gap: 10px;
+			.leftControls {
+				display: flex;
+				gap: 10px;
+				max-width: 100%;
+			}
+			.rightControls {
+				display: flex;
+				gap: 10px;
+				.priorityButton {
+					&:hover {
+						color: unset;
+					}
+					&[data-priority='1'] {
+						color: var(--color-checkbox-priority1);
+					}
+					&[data-priority='2'] {
+						color: var(--color-checkbox-priority2);
+					}
+					&[data-priority='3'] {
+						color: var(--color-checkbox-priority3);
+					}
+					&[data-priority='4'] {
+						color: var(--color-checkbox-priority4);
+					}
+				}
+			}
+		}
+	}
+	.buttons {
+		display: flex;
+		justify-content: flex-end;
+		padding: 12px 24px;
+		background-color: inherit;
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+		flex-shrink: 0;
+		gap: 10px;
+		color: var(--text-main-color);
+	}
+}

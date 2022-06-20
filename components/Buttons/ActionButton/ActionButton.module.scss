@@ -1,0 +1,21 @@
+@import 'mixins';
+.actionButton {
+	@include button();
+	color: gray;
+	border-radius: 3px;
+	height: 24px;
+	width: 24px;
+	.icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 20px;
+	}
+	&.disable {
+		opacity: 1;
+	}
+	&:hover {
+		background-color: var(--bg-action-button);
+		color: var(--color-action-button);
+	}
+}

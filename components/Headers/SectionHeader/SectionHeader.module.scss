@@ -1,0 +1,44 @@
+@import 'mixins';
+.sectionHeader {
+	display: flex;
+	align-items: center;
+	position: relative;
+	background-color: var(--section-bg);
+	border: #ddd;
+	font-size: 14px;
+	border-bottom: 1px solid var(--section-border-color);
+	z-index: 2;
+	.editSectionForm {
+		@include addEditSectionForm();
+	}
+	.buttons {
+		display: flex;
+	}
+	.textWrapper {
+		display: flex;
+		align-items: center;
+		padding: 6px 30px 6px 34px;
+		flex: 1;
+		gap: 10px;
+
+		.text {
+			color: var(--text-main-color);
+			text-align: left;
+			line-height: 20px;
+			font-weight: 700;
+			word-wrap: break-word;
+			word-break: break-word;
+			cursor: text;
+			&.archived {
+				cursor: unset;
+			}
+		}
+		.tasks {
+			color: grey;
+			font-size: 12px;
+		}
+	}
+	.restButton {
+		display: flex;
+	}
+}

@@ -1,0 +1,32 @@
+@import 'mixins';
+.sectionListItem {
+	position: relative;
+	margin-bottom: 18px;
+	.sectionContent {
+		.sectionTasks {
+			display: flex;
+			flex-direction: column;
+			.addSectionForm {
+				@include addEditSectionForm();
+			}
+			.tasksList {
+				display: flex;
+				flex-direction: column;
+				flex: 1;
+
+				.addTask {
+					display: flex;
+					.addTaskForm {
+						@include addEditTaskForm();
+					}
+				}
+			}
+			.addSection {
+				opacity: 0;
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

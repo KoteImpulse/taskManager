@@ -1,0 +1,42 @@
+.prioritySelectListItem {
+	cursor: pointer;
+	.content {
+		display: flex;
+		align-items: center;
+		padding: 10px 0;
+		margin: 0 10px;
+		gap: 10px;
+		.flagIcon {
+			display: flex;
+			align-items: center;
+			font-size: 20px;
+			&[data-priority='1'] {
+				color: var(--color-checkbox-priority1);
+			}
+			&[data-priority='2'] {
+				color: var(--color-checkbox-priority2);
+			}
+			&[data-priority='3'] {
+				color: var(--color-checkbox-priority3);
+			}
+			&[data-priority='4'] {
+				color: var(--color-checkbox-priority4);
+			}
+		}
+		.text {
+			display: flex;
+			align-items: center;
+		}
+		.chechIcon {
+			display: flex;
+			align-items: center;
+			font-size: 20px;
+			flex: 1;
+			justify-content: flex-end;
+			color: chocolate;
+		}
+	}
+	&:hover {
+		background-color: var(--select-project-bg-active);
+	}
+}

@@ -1,0 +1,10 @@
+.taskActions {
+	display: flex;
+	position: absolute;
+	justify-content: flex-end;
+	gap: 5px;
+	min-height: 28px;
+	right: 0;
+	top: 0;
+	background-color: var(--task-action-bg);
+}

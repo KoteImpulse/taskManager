@@ -1,0 +1,102 @@
+@mixin mq($from, $to: false) {
+	@if $to {
+		@media (min-width: #{$from}px) and (max-width: #{$to}px) {
+			@content;
+		}
+	} @else {
+		@media (max-width: #{$from}px) {
+			@content;
+		}
+	}
+}
+@mixin mqh($from, $to: false) {
+	@if $to {
+		@media (min-height: #{$from}px) and (max-height: #{$to}px) {
+			@content;
+		}
+	} @else {
+		@media (max-height: #{$from}px) {
+			@content;
+		}
+	}
+}
+
+@mixin fontStyle($size: false, $colour: false, $weight: false, $lh: false) {
+	font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+	@if $size {
+		font-size: $size;
+	}
+	@if $colour {
+		color: $colour;
+	}
+	@if $weight {
+		font-weight: $weight;
+	}
+	@if $lh {
+		line-height: $lh;
+	}
+}
+
+@mixin button() {
+	display: flex;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	font-size: 14px;
+	white-space: nowrap;
+	text-decoration: none;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	user-select: none;
+}
+
+@mixin addEditTaskForm() {
+	display: flex;
+	flex-direction: column;
+	border-radius: 10px;
+	margin: 5px;
+	background-color: var(--task-bg-color);
+	border: 1px solid var(--task-modal-bg);
+	flex-grow: 1;
+	color: var(--text-main-color);
+	user-select: none;
+	width: 100%;
+}
+@mixin addEditSectionForm() {
+	display: flex;
+	flex: 1;
+	padding: 6px 0px 6px 34px;
+}
+@mixin scrollBar() {
+	&::-webkit-scrollbar {
+		width: 10px;
+		background-color: transparent;
+	}
+	&:hover::-webkit-scrollbar {
+		width: 10px;
+		background-color: transparent;
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: transparent;
+	}
+	&:hover::-webkit-scrollbar-thumb {
+		background-color: #949494;
+	}
+	scrollbar-color: transparent transparent;
+	scrollbar-width: thin;
+	&:hover {
+		scrollbar-color: #949494 transparent;
+	}
+}
+@mixin ulListSelect() {
+	background-color: var(--select-project-bg);
+	border: 1px solid var(--select-project-border);
+	box-shadow: var(--select-project-shadow);
+	color: var(--text-main-color);
+	width: 275px;
+	min-height: inherit;
+	padding: 0;
+	border-radius: 5px;
+}

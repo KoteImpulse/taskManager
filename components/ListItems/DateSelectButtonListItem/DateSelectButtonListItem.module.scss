@@ -1,0 +1,33 @@
+.dateSelectButtonListItem {
+	cursor: pointer;
+	.content {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		margin: 0 10px;
+		gap: 10px;
+		font-size: 14px;
+		.btnContainer {
+			position: relative;
+			.text {
+				position: absolute;
+				top: 8px;
+				left: 9px;
+				font-size: 10px;
+				pointer-events: none;
+			}
+		}
+		.mainText {
+			display: flex;
+		}
+		.day {
+			display: flex;
+			justify-content: flex-end;
+			flex: 1;
+			text-align: end;
+		}
+	}
+	&:hover {
+		background-color: var(--select-project-bg-active);
+	}
+}

@@ -1,0 +1,39 @@
+.projectHeader {
+	display: flex;
+	position: sticky;
+	flex-shrink: 0;
+	background-color: var(--bg-main);
+	top: 0;
+
+	padding-top: var(--project-padding-top);
+	z-index: 3;
+	.headerContent {
+		display: flex;
+		align-items: flex-start;
+		width: 100%;
+		padding-bottom: 20px;
+		margin: 0 auto;
+		word-break: break-word;
+		max-width: var(--project-max-width);
+		padding-left: var(--project-padding);
+		padding-right: var(--project-padding);
+		border-bottom: 1px solid transparent;
+		.header {
+			border-radius: 5px;
+			font-size: 20px;
+			font-weight: 700;
+			line-height: 25px;
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			max-width: calc(100% - 140px);
+			margin-left: 24px;
+		}
+		.buttons {
+			display: flex;
+			align-items: center;
+			margin-left: auto;
+		}
+	}
+}

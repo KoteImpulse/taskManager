@@ -1,0 +1,26 @@
+.header {
+	--gap: 14px;
+	display: flex;
+	height: 100%;
+	width: 100%;
+	justify-content: space-between;
+	color: var(--text-main-color);
+	.leftControl {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: var(--gap);
+		.searchBar {
+			display: flex;
+			align-items: center;
+			gap: var(--gap);
+		}
+	}
+	.rightControl {
+		display: flex;
+		align-items: center;
+		height: var(--header-height);
+		gap: var(--gap);
+		padding: 0 12px;
+	}
+}

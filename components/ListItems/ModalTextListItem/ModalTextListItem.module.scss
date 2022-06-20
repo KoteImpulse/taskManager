@@ -1,0 +1,27 @@
+.modalTextListItem {
+	display: flex;
+	align-items: flex-start;
+	line-height: 24px;
+	padding: 4px 10px;
+	user-select: none;
+	&:hover {
+		background-color: var(--bg-modal-list-item);
+		cursor: pointer;
+	}
+
+	.container {
+		display: flex;
+		.icon {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 24px;
+			width: 24px;
+			margin-right: 10px;
+		}
+		.text {
+			display: flex;
+			flex: 1;
+		}
+	}
+}

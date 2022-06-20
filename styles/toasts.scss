@@ -1,0 +1,84 @@
+.toastsContainer {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	gap: 1rem;
+	width: 250px;
+	margin: 10px;
+
+	.toast {
+		display: flex;
+		position: relative;
+		background-color: rgb(240, 210, 210);
+		padding: 1rem;
+		max-width: 250px;
+		min-width: 250px;
+		border: 1px solid #333;
+		border-radius: 0.25em;
+		cursor: pointer;
+		user-select: none;
+		transition: transform 0.25s ease-in-out;
+		overflow: hidden;
+
+		&.progress {
+			&::before {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background-color: rgb(127, 204, 204);
+				height: 5px;
+				width: calc(100% * var(--progress));
+				margin-left: auto;
+			}
+		}
+
+		.closeButton {
+			position: absolute;
+			top: 2px;
+			right: 5px;
+			background-color: transparent;
+			border: none;
+		}
+		.textContainer {
+			display: flex;
+			flex-direction: column;
+			.title {
+			}
+			.description {
+			}
+		}
+	}
+	&[data-position$='-right'] {
+		.toast {
+			transform: translateX(110%);
+			&.show {
+				transform: translateX(0);
+			}
+		}
+	}
+
+	&[data-position$='-left'] {
+		.toast {
+			transform: translateX(-110%);
+			&.show {
+				transform: translateX(0);
+			}
+		}
+	}
+
+	&[data-position^='top-'] {
+		top: 0;
+	}
+	&[data-position$='-right'] {
+		right: 0;
+	}
+
+	&[data-position^='bottom-'] {
+		bottom: 0;
+	}
+	&[data-position$='-left'] {
+		left: 0;
+	}
+}

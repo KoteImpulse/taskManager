@@ -1,0 +1,52 @@
+.singleTaskHeader {
+	display: flex;
+	position: relative;
+	align-items: center;
+	padding: 0 24px;
+	background-color: var(--bg-project-modal-header);
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom: 1px solid var(--bg-project-modal-border);
+	flex-shrink: 0;
+	user-select: none;
+	.container {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+		width: 100%;
+		.location {
+			display: flex;
+			flex: 1;
+			line-height: 48px;
+			overflow: hidden;
+			.linksBlock {
+				display: flex;
+				overflow: hidden;
+				.link {
+					display: inline-flex;
+					flex: 1;
+					align-items: center;
+					max-width: fit-content;
+					overflow: hidden;
+					white-space: nowrap;
+					text-decoration: none;
+					color: var(--text-main-color);
+					&:hover {
+						text-decoration: underline;
+						cursor: pointer;
+					}
+					.text {
+						text-overflow: ellipsis;
+						white-space: nowrap;
+						overflow: hidden;
+					}
+				}
+			}
+		}
+		.buttons {
+			display: flex;
+			align-items: center;
+		}
+	}
+}

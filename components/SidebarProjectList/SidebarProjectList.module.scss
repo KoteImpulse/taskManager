@@ -1,0 +1,30 @@
+.sidebarProjectList {
+	margin-top: 12px;
+	.buttons {
+		display: flex;
+		position: relative;
+		align-items: center;
+		margin-left: -35px;
+		padding: 1px 0 0 35px;
+		border: none;
+		background-color: var(--bg-sidebar);
+		.addButton {
+			flex: 0;
+			justify-self: flex-end;
+			align-items: center;
+			width: 24px;
+			height: 24px;
+			border-radius: 3px;
+			margin-right: 13px;
+		}
+	}
+	.collapse {
+		min-height: 0px;
+		overflow: hidden;
+		display: block;
+		transform-origin: center center;
+		.collapseWrapper {
+			width: 100%;
+		}
+	}
+}

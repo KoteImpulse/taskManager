@@ -1,0 +1,41 @@
+@import 'mixins';
+.sectionListItem {
+	position: relative;
+	margin-bottom: 18px;
+	.sectionContent {
+		.sectionTasks {
+			display: flex;
+			flex-direction: column;
+			.header {
+				font-size: 16px;
+				font-weight: 500;
+				line-height: 25px;
+				display: -webkit-box;
+				-webkit-line-clamp: 1;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+				max-width: calc(100% - 140px);
+			}
+			.addSectionForm {
+				@include addEditSectionForm();
+			}
+			.tasksList {
+				display: flex;
+				flex-direction: column;
+				flex: 1;
+				.addTask {
+					display: flex;
+					.addTaskForm {
+						@include addEditTaskForm();
+					}
+				}
+			}
+			.addSection {
+				opacity: 0;
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

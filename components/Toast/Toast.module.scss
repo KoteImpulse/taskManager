@@ -1,0 +1,73 @@
+.toast {
+	display: flex;
+	position: relative;
+	max-width: 250px;
+	width: 250px;
+	min-height: 75px;
+	align-items: center;
+
+	opacity: 1;
+	padding: 15px;
+	color: var(--toast-text-color);
+	cursor: pointer;
+	border-radius: 5px;
+	box-shadow: 0px 0px 2px #454545;
+	user-select: none;
+	overflow: hidden;
+
+	&:hover {
+		transition: 0.2s;
+		transform: scale(0.98);
+		box-shadow: 0px 0px 3px #808080;
+	}
+
+	&.success {
+		background-color: var(--bg-toast-success);
+	}
+	&.warning {
+		background-color: var(--bg-toast-warning);
+	}
+	&.error {
+		background-color: var(--bg-toast-error);
+	}
+	&.info {
+		background-color: var(--bg-toast-info);
+	}
+
+	.closeButton {
+		display: flex;
+		position: absolute;
+		top: 2px;
+		right: 5px;
+		background-color: transparent;
+		border: none;
+		font-size: 20px;
+		cursor: pointer;
+		color: var(--toast-text-color);
+	}
+	.textContainer {
+		display: flex;
+		flex-direction: column;
+		color: var(--toast-text-color);
+		.title {
+			display: flex;
+		}
+		.text {
+			display: flex;
+		}
+	}
+	.progressBar {
+		display: flex;
+		position: absolute;
+		background-color: transparent;
+		height: 5px;
+		width: 100%;
+		inset: auto auto 0 0;
+		.progress {
+			--progress: 1;
+			background-color: var(--bg-toast-progress);
+			width: 100%;
+			transform: translateX(calc(100% * var(--progress)));
+		}
+	}
+}

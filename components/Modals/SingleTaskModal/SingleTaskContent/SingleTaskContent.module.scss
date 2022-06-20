@@ -1,0 +1,33 @@
+@import 'mixins';
+.singleTaskContent {
+	display: flex;
+	height: calc(100% - 48px);
+	.leftSide {
+		padding: 20px;
+		overflow: auto;
+		width: 100%;
+		.breadcrumbs {
+			display: flex;
+			flex: 1;
+			margin-bottom: 10px;
+			padding: 10px;
+			border: 1px solid var(--task-border);
+			border-radius: 5px;
+			&:hover {
+				background-color: var(--bg-action-button);
+				color: var(--color-action-button);
+				cursor: pointer;
+			}
+			.taskName {
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				overflow: hidden;
+			}
+		}
+		@include scrollBar();
+	}
+	.rightSide {
+		flex-shrink: 0;
+		background-color: var(--single-task-modal-aside-bg);
+	}
+}

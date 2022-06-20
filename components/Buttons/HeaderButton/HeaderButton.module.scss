@@ -1,0 +1,19 @@
+@import 'mixins';
+.headerButton {
+	@include button();
+	border-radius: 3px;
+	&:hover {
+		background-color: var(--bg-header-button-hover);
+	}
+	&.disable {
+		// opacity: 0.3;
+	}
+	.icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 28px;
+		width: 28px;
+		color: var(--header-button-text-color);
+	}
+}

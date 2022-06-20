@@ -1,0 +1,37 @@
+.sectionEditModalInput {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 2px;
+	color: var(--text-main-color);
+	user-select: none;
+
+	.label {
+		display: block;
+		font-size: 14px;
+		width: 50%;
+		font-weight: 700;
+		margin: 0 0 7px;
+		color: inherit;
+	}
+	.charLength {
+		display: flex;
+		justify-content: flex-end;
+		color: #d1453b;
+		font-size: 0.875rem;
+		font-weight: 400;
+		line-height: 1.7;
+	}
+	.input {
+		width: 100%;
+		border-radius: 5px;
+		border: none;
+		padding: 5px;
+		background-color: transparent;
+		color: inherit;
+		resize: none;
+		border: 1px solid var(--task-modal-btn-border);
+		&:focus {
+			border: none;
+		}
+	}
+}

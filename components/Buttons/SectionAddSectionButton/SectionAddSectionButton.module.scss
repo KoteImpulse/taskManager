@@ -1,0 +1,29 @@
+@import 'mixins';
+.sectionAddSectionButton {
+	@include button();
+	flex: 1 1 auto;
+	font-weight: 700;
+	height: 24px;
+	color: var(--section-add-section-color);
+	.text {
+		margin: 0 20px;
+	}
+	&::after {
+		content: '';
+		margin-right: 45px;
+		display: block;
+		height: 1px;
+		flex: 1 1 auto;
+		opacity: 0.5;
+		background-color: var(--section-add-section-color);
+	}
+	&::before {
+		content: '';
+		margin-left: 45px;
+		display: block;
+		height: 1px;
+		flex: 1 1 auto;
+		opacity: 0.5;
+		background-color: var(--section-add-section-color);
+	}
+}

@@ -1,0 +1,215 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: Roboto, sans-serif;
+}
+
+html,
+body {
+	overflow: hidden;
+	font-size: 14px;
+}
+
+a {
+	text-decoration: none;
+}
+ul,
+ol,
+li {
+	list-style: none;
+	outline: none;
+	text-decoration: none;
+}
+
+*:focus {
+	outline: none;
+}
+input {
+	outline: none;
+}
+
+:root {
+	--header-height: 46px;
+	--main-height: 380px;
+	--project-padding: 55px;
+	--project-padding-top: 35px;
+	--project-max-width: 900px;
+
+	--tomorrow-color: #ad6200;
+	--inbox-color: #692fc2;
+	--today-color: #058527;
+	--next-week-color: #246fe0;
+
+	--bg-sidebar: #fafafa;
+	--bg-main: #ffffff;
+	--bg-resizer: #ebebeb;
+	--bg-topbar: #db4c3f;
+
+	--header-shadow: unset;
+
+	--bg-modal-list-item: #f3f3f3;
+
+	--bg-sidebar-modal: #fff;
+	--sidebar-modal-border: #ddd;
+
+	--bg-project-list-item-active: #eee;
+	--bg-project-modal: #fff;
+	--bg-project-modal-shadow: 0 2px 8px 0 #00000029;
+	--bg-project-modal-border: #ddd;
+	--bg-project-modal-header: #fafafa;
+	--bg-project-modal-button: #f3f3f3;
+	--bg-project-modal-switcher: #dddddd;
+	--bg-project-modal-circle: #fff;
+
+	--text-main-color: #222222;
+	--rest-button-color: #808080;
+
+	--bg-tooltip-modal: #363636;
+	--text-tooltip-color: #ffffff;
+	--sidebar-modal-shadow: #00000014;
+
+	--header-button-text-color: #ffffff;
+	--bg-header-button-hover: #ffffff33;
+
+	--bg-toast-info: #8398bd;
+	--bg-toast-success: #83bd92;
+	--bg-toast-warning: #bda883;
+	--bg-toast-error: #bd8383;
+	--bg-toast-progress: #6677da;
+	--toast-text-color: #ffffff;
+
+	--bg-checkbox-priority1: transparent;
+	--border-checkbox-priority1: grey;
+	--color-checkbox-priority1: grey;
+
+	--bg-checkbox-priority2: #246fe01a;
+	--border-checkbox-priority2: #246fe0;
+	--color-checkbox-priority2: #246fe0;
+
+	--bg-checkbox-priority3: #eb89091a;
+	--border-checkbox-priority3: #eb8909;
+	--color-checkbox-priority3: #eb8909;
+
+	--bg-checkbox-priority4: #d1453b1a;
+	--border-checkbox-priority4: #d1453b;
+	--color-checkbox-priority4: #d1453b;
+
+	--bg-action-button: #eee;
+	--color-action-button: #202020;
+
+	--task-border: #f0f0f0;
+	--task-bg-color: #ffffff;
+	--task-action-bg: #fff;
+
+	--section-add-task-bg: #fff;
+	--section-add-task-bg-hover: #dd4b39;
+	--section-add-task-color: #dd4b39;
+	--section-add-task-color-hover: #fff;
+	--section-add-section-color: #dd4b39;
+	--section-bg: #fff;
+	--section-border-color: #f0f0f0;
+
+	--task-modal-btn-border: #ccc;
+	--task-modal-btn-color: #555;
+	--task-modal-bg: #eee;
+
+	--select-project-bg: #fff;
+	--select-project-bg-active: #f3f3f3;
+	--select-project-border: #0000001a;
+	--select-project-shadow: 0 2px 4px 0 #00000014;
+
+	--select-priority-border: #6c6c6c36;
+	--calendar-day-hover: #f1f1f1;
+
+	--single-task-modal-aside-bg: transpanent;
+}
+[data-theme='dark'] {
+	--tomorrow-color: #ff9a14;
+	--inbox-color: #a970ff;
+	--today-color: #48c906;
+	--next-week-color: #5297ff;
+
+	--bg-sidebar: #242424;
+	--bg-main: #1f1f1f;
+	--bg-resizer: #363636;
+	--bg-topbar: #282828;
+
+	--header-shadow: 0 1px 3px 0 #00000026;
+
+	--bg-modal-list-item: #4d4d4d;
+
+	--bg-sidebar-modal: #282828;
+	--sidebar-modal-border: #171717;
+	--sidebar-modal-shadow: #00000030;
+
+	--bg-project-list-item-active: #363636;
+	--bg-project-modal: #282828;
+	--bg-project-modal-shadow: 0 6px 36px 0 #000000e6;
+	--bg-project-modal-border: #333;
+	--bg-project-modal-header: #202020;
+	--bg-project-modal-button: #353535;
+	--bg-project-modal-switcher: #555;
+
+	--text-main-color: #ffffffe5;
+	--rest-button-color: #ffffffde;
+
+	--bg-tooltip-modal: #363636;
+	--text-tooltip-color: #ffffff;
+
+	--header-button-text-color: #ffffffde;
+	--bg-header-button-hover: #ffffff8f;
+
+	--bg-toast-info: #61728f;
+	--bg-toast-success: #669773ad;
+	--bg-toast-warning: #9c8152ad;
+	--bg-toast-error: #945050ad;
+	--bg-toast-progress: #434ee4;
+	--toast-text-color: #f3f1f1;
+
+	--bg-checkbox-priority1: transparent;
+	--border-checkbox-priority1: grey;
+	--color-checkbox-priority1: grey;
+
+	--bg-checkbox-priority2: #5297ff1a;
+	--border-checkbox-priority2: #5297ff;
+	--color-checkbox-priority2: #5297ff;
+
+	--bg-checkbox-priority3: #ff9a141a;
+	--border-checkbox-priority3: #ff9a14;
+	--color-checkbox-priority3: #ff9a14;
+
+	--bg-checkbox-priority4: #ff70661a;
+	--border-checkbox-priority4: #ff7066;
+	--color-checkbox-priority4: #ff7066;
+
+	--bg-action-button: #363636;
+	--color-action-button: #ffffffde;
+
+	--task-border: #ffffff1a;
+	--task-bg-color: #1f1f1f;
+	--task-action-bg: #1f1f1f;
+
+	--section-add-task-bg: transpanent;
+	--section-add-task-bg-hover: #dd4b39;
+	--section-add-task-color: #dd4b39;
+	--section-add-task-color-hover: #fff;
+	--section-add-section-color: #dd4b39;
+
+	--section-bg: #1f1f1f;
+	--section-border-color: #ffffff1a;
+
+	--task-modal-bg: #363636;
+	--task-modal-btn-border: #555;
+	--task-modal-btn-color: #ffffff99;
+
+	--select-project-bg: #282828;
+	--select-project-bg-active: #363636;
+	--select-project-border: #171717;
+	--select-project-shadow: 0 10px 20px #00000030, 0 6px 6px #0000003b;
+
+	--select-priority-border: #6c6c6cd6;
+	--calendar-day-hover: #4d4d4d;
+
+	--single-task-modal-aside-bg: #242424;
+}

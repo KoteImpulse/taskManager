@@ -1,0 +1,37 @@
+.projectModalSwitcher {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
+	color: var(--text-main-color);
+	.label {
+		display: block;
+		font-size: 14px;
+		width: 50%;
+		font-weight: 700;
+		margin: 0 0 7px;
+		color: inherit;
+	}
+	.switcher {
+		display: flex;
+		width: 30px;
+		height: 17px;
+		border-radius: 100px;
+		padding: 1px;
+		cursor: pointer;
+		&.on {
+			background-color: #22cc88;
+			justify-content: flex-end;
+		}
+		&.off {
+			background-color: var(--bg-project-modal-switcher);
+			justify-content: flex-start;
+		}
+		.circle {
+			width: 15px;
+			height: 15px;
+			background-color: var(--bg-project-modal-circle);
+			border-radius: 200px;
+			box-shadow: 1px 2px 3px #00000005;
+		}
+	}
+}

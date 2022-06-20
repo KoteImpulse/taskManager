@@ -1,0 +1,36 @@
+@import 'mixins';
+
+.sectionAddTaskButton {
+	@include button();
+	justify-content: flex-start;
+	flex: 1;
+	gap: 10px;
+	padding: 10px 25px;
+
+	.text {
+		display: flex;
+		font-size: 14px;
+		color: gray;
+	}
+	.icon {
+		display: flex;
+		align-items: center;
+		border-radius: 50%;
+		justify-content: center;
+		width: 20px;
+		height: 20px;
+		font-size: 22px;
+		color: var(--section-add-task-bg-hover);
+		background-color: var(--section-add-task-bg);
+	}
+
+	&:hover {
+		.icon {
+			background-color: var(--section-add-task-bg-hover);
+			color: var(--section-add-task-color-hover);
+		}
+		.text {
+			color: var(--section-add-task-color);
+		}
+	}
+}

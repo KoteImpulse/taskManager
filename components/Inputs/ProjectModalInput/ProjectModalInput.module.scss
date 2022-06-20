@@ -1,0 +1,35 @@
+.projectModalInput {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	margin-bottom: 20px;
+	color: var(--text-main-color);
+	user-select: none;
+	.label {
+		display: block;
+		font-size: 14px;
+		width: 50%;
+		font-weight: 700;
+		margin: 0 0 7px;
+		color: inherit;
+	}
+	.charLength {
+		display: block;
+		color: #d1453b;
+		font-size: 0.875rem;
+		font-weight: 400;
+		line-height: 1.7;
+	}
+	.input {
+		width: 100%;
+		border-radius: 5px;
+		border: 1px solid var(--bg-project-modal-border);
+		padding: 5px;
+		background-color: var(--bg-project-modal-header);
+		color: inherit;
+		&:focus {
+			border: 1px solid grey;
+			border-color: #555;
+		}
+	}
+}

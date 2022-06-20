@@ -1,0 +1,23 @@
+@import 'mixins';
+.colorPickerButton {
+	@include button();
+	justify-content: flex-start;
+	border-radius: 5px;
+	border: 1px solid var(--bg-project-modal-border);
+	padding: 5px;
+	color: var(--text-main-color);
+	background-color: var(--bg-project-modal-header);
+
+	.colorDot {
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+	}
+	.alias {
+		margin: 0 6px;
+		color: inherit;
+	}
+	&.disable {
+		// opacity: 0.3;
+	}
+}

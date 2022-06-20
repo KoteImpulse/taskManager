@@ -1,0 +1,23 @@
+.tolltipModal {
+	pointer-events: none;
+	position: absolute;
+	white-space: nowrap;
+	background-color: var(--bg-tooltip-modal);
+	color: var(--text-tooltip-color);
+	border: none;
+	border-radius: 3px;
+	padding: 5px 8px;
+	z-index: 1000;
+	text-align: left;
+	user-select: none;
+	z-index: 1002;
+	&.hidden {
+		display: none;
+	}
+	&.show {
+		display: block;
+	}
+}
+.cursor {
+	cursor: pointer;
+}

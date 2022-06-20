@@ -1,0 +1,22 @@
+.projectModalDropdownListItem {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	&:hover {
+		background-color: var(--bg-project-list-item-active);
+	}
+	.colorDot {
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+	}
+	.alias {
+		margin: 0 6px;
+		flex: 1;
+	}
+	.checkmark {
+		display: flex;
+		font-size: 14px;
+		justify-self: flex-end;
+	}
+}

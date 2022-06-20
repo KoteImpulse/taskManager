@@ -1,0 +1,52 @@
+@import 'mixins';
+.taskModalProjectButton {
+	@include button();
+	justify-content: space-between;
+	height: 28px;
+	padding: 0 8px;
+	border: 1px solid var(--task-modal-btn-border);
+	border-radius: 5px;
+	color: var(--task-modal-btn-color);
+	background-color: transparent;
+	flex: 0 1 auto;
+	min-width: 0;
+	&.active {
+		background-color: var(--task-modal-bg);
+	}
+	&:hover {
+		background-color: var(--task-modal-bg);
+	}
+
+	.text {
+		display: flex;
+		flex-wrap: nowrap;
+		align-items: center;
+		width: 100%;
+		gap: 5px;
+		.dot {
+			display: flex;
+			.projectDot {
+				display: flex;
+				align-items: center;
+				border-radius: 50%;
+				width: 8px;
+				height: 8px;
+			}
+		}
+		.projectName {
+			min-width: 0;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+		}
+		.delimetr {
+			display: flex;
+		}
+		.sectionName {
+			min-width: 0;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+		}
+	}
+}

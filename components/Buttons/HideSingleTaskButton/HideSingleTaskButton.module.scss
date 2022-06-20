@@ -1,0 +1,25 @@
+@import 'mixins';
+.hideSingleTaskButton {
+	@include button();
+	justify-content: flex-start;
+	flex: 1;
+	font-weight: 500;
+	color: inherit;
+	padding: 10px 3px;
+	border-radius: 3px;
+	.container {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+		.text {
+			letter-spacing: -0.35px;
+		}
+	}
+	&:hover {
+		background-color: var(--bg-action-button);
+		color: var(--color-action-button);
+	}
+	&.disable {
+		// opacity: 0.3;
+	}
+}
